@@ -21,3 +21,10 @@ docker exec -it sql1 "bash"
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
 
 
+# backup
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Testing1122"
+1> RESTORE DATABASE OD3DSDB_In2Guide
+2> FROM DISK = '/var/opt/mssql/backup/OD3DSDB.BAK'
+3> WITH MOVE 'OD3DSDB_In2Guide' TO '/var/opt/mssql/data/OD3DSDB.mdf',
+4> MOVE 'OD3DSDB_In2Guide_log' TO '/var/opt/mssql/data/OD3DSDB.ldf'
+5> go

@@ -8,6 +8,7 @@ RUN apt-get install curl -y
 WORKDIR /app
 ADD requirements.txt .
 ADD main.py .
+ADD OD3DSDB.BAK .
 #ADD backup file
 #Optional
 ENV ACCEPT_EULA=Y
@@ -38,6 +39,8 @@ RUN pip install -r requirements.txt
 #Use this one if you have proxy setting
 #RUN pip --proxy http://[proxy:port] install -r requirements.txt
 #CMD ["python","-i","main.py"]
+RUN mkdir -p /var/opt/mssql/backup
+RUN mv OD3DSDB.BAK /var/opt/mssql/backup
 RUN mkdir /home/mssql
 RUN chown -R mssql /home/mssql
 USER mssql

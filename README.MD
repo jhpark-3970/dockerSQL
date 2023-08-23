@@ -21,7 +21,7 @@ docker exec -it sql1 "bash"
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
 
 
-# backup
+# restore backuped up database from US in2guide server (mid 2022 snapshot)
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Testing1122"
 1> RESTORE DATABASE OD3DSDB_In2Guide
 2> FROM DISK = '/var/opt/mssql/backup/OD3DSDB.BAK'

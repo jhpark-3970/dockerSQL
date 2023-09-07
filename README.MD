@@ -4,8 +4,10 @@ Container for SQLServer19 on Ubuntu20.04
 - root
 - mssql
 
-# Install
+# Install (build Image)
 docker build -t sqlsrv .
+
+# Install (run Container)
 docker run -e "ACCEPT_EULA=Y" -e "Testing1122" -p 1433:1433 --name sql1 -h sql1 -d sqlsrv
 
 # Other way to make sql server container based on Ubuntu
